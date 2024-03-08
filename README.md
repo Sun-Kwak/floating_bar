@@ -1,39 +1,11 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+![floating_bar](https://github.com/Sun-Kwak/floating_bar/assets/136423352/5d749cca-908e-4252-bd76-7294b4dd9d49)
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+![floating_bar_onTap](https://github.com/Sun-Kwak/floating_bar/assets/136423352/13f22b82-ada5-46e2-9270-7e1a2cb09699)
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+![floating_bar_onPanUpdated](https://github.com/Sun-Kwak/floating_bar/assets/136423352/57b1aed5-f1cc-4764-8ffb-97bcfac201fb)
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+![floating_bar_collapsed_UI_changes](https://github.com/Sun-Kwak/floating_bar/assets/136423352/e5c4ad4d-1dbf-43a5-a3c8-5fda7dd3e885)
 
-## Features
+![floating_bar_expanded_UI_changes](https://github.com/Sun-Kwak/floating_bar/assets/136423352/aeb22624-db33-4730-8522-f2893e9d9dd0)
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
-```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+![floating_bar_expanded_UI_constraints](https://github.com/Sun-Kwak/floating_bar/assets/136423352/e1e9e1b7-28a4-4191-8ddc-b4697a379dd2)
