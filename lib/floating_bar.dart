@@ -37,12 +37,13 @@ class FloatingBar extends StatefulWidget {
   /// Opacity of the bar when expanded.
   final double expandedOpacity;
 
+  /// Border color of the bar.
+  final Color? boarderColor;
+
   /// Constructs a [FloatingBar] widget.
   ///
   /// The [children] parameter provides a list of child widgets to include in the bar.
   /// It can contain a maximum of five child widgets.
-  ///
-  /// The [parentKey] parameter provides the GlobalKey of the parent widget where the bar will be displayed.
   ///
   /// The [initialYOffsetPercentage] parameter represents the initial Y offset of the bar relative to the top of the parent widget.
   /// Its value must be between 0 and 1.
@@ -71,6 +72,7 @@ class FloatingBar extends StatefulWidget {
     this.collapsedOpacity = 0.3,
     this.expandedOpacity = 0.3,
     this.childrenPadding = 8,
+    this.boarderColor,
     Key? key,
   }) : super(key: key) {
     if (children.length > 5) {
@@ -107,6 +109,7 @@ class _FloatingBarState extends State<FloatingBar> {
           expansionWidthPercentage: widget.expansionWidthPercentage,
           floatingBarSize: widget.floatingBarSize,
           initialYOffsetPercentage: widget.initialYOffsetPercentage,
+          boarderColor: widget.boarderColor,
           children: widget.children,
         );
       },
@@ -124,6 +127,7 @@ class FloatingButtons extends StatefulWidget {
   final double expandedOpacity;
   final double collapsedOpacity;
   final Color expansionButtonColor;
+  final Color? boarderColor;
   final double expansionWidthPercentage;
   final double floatingBarSize;
   final double initialYOffsetPercentage;
@@ -142,6 +146,7 @@ class FloatingButtons extends StatefulWidget {
     required this.expansionWidthPercentage,
     required this.floatingBarSize,
     required this.initialYOffsetPercentage,
+    this.boarderColor,
   });
 
   @override
@@ -265,6 +270,9 @@ class FloatingButtonsState extends State<FloatingButtons>
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
         color: color.withOpacity(widget.expandedOpacity),
+        border: Border.all(
+          color: widget.boarderColor ?? Colors.transparent,
+        ),
         borderRadius: BorderRadius.circular(_floatingBarSize * 0.2),
       ),
       child: Row(
@@ -355,6 +363,9 @@ class FloatingButtonsState extends State<FloatingButtons>
         decoration: BoxDecoration(
           shape: !_isPanUpdating ? BoxShape.rectangle : BoxShape.circle,
           color: color.withOpacity(widget.collapsedOpacity),
+          border: Border.all(
+            color: widget.boarderColor ?? Colors.transparent,
+          ),
           borderRadius: !_isPanUpdating
               ? BorderRadius.circular(_floatingBarSize * 0.2)
               : null,

@@ -1,3 +1,23 @@
+"When tapped, the children expand to be visible, draggable via drag, and upon onPanEnd, designed to reattach to the left or right based on the given screen center."
+
+The [children] parameter provides a list of child widgets to include in the bar.
+It can contain a maximum of five child widgets.
+
+The [initialYOffsetPercentage] parameter represents the initial Y offset of the bar relative to the top of the parent widget.
+Its value must be between 0 and 1.
+
+The [expansionWidthPercentage] parameter determines the percentage of the parent widget's width occupied by the expanded bar.
+It must be between 0 and 1.
+
+The [collapsedOpacity] parameter determines the opacity of the bar when collapsed. It must be between 0 and 1.
+
+The [expandedOpacity] parameter determines the opacity of the bar when expanded. It must be between 0 and 1.
+
+Note: The width of each child in [children] is determined by the [expansionWidthPercentage] parameter, which calculates the available width based on the parent widget's width. Each child's width is then constrained by subtracting the padding between children ([childrenPadding]) and dividing by the number of children. Therefore, careful consideration should be given to the value of [childrenPadding].
+
+Example:
+If the parent widget's width is 500, and [expansionWidthPercentage] is 0.5, then the expansion width will be 250. With a [childrenPadding] of 10 and a list of 5 children, each child can have a maximum width of (250 - 10 \* 5) / 5 = 40.
+
 #Basic UI and onPanEnd
 
 ![floating_bar](https://github.com/Sun-Kwak/floating_bar/assets/136423352/5d749cca-908e-4252-bd76-7294b4dd9d49)
