@@ -1,6 +1,6 @@
 name: floating_bar
-description: "A Draggable Floating Bar.When tapped, the children expand to be visible, draggable via drag, and upon onPanEnd, designed to reattach to the left or right based on the given screen center."
-version: 0.0.3
+description: "A Draggable Floating Bar.When tapped, the children expand to be visible"
+version: 0.0.4
 repository: https://github.com/Sun-Kwak/floating_bar.git
 
 environment:
