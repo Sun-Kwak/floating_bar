@@ -9,3 +9,7 @@
 ## 0.0.3
 
 - border color parameter added.
+
+## 0.0.4
+
+- pubspec.yaml description changed.

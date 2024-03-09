@@ -73,8 +73,8 @@ class FloatingBar extends StatefulWidget {
     this.expandedOpacity = 0.3,
     this.childrenPadding = 8,
     this.boarderColor,
-    Key? key,
-  }) : super(key: key) {
+    super.key,
+  }) {
     if (children.length > 5) {
       throw ArgumentError('Floating list can only contain up to 5.');
     }
@@ -98,6 +98,7 @@ class _FloatingBarState extends State<FloatingBar> {
     return LayoutBuilder(
       builder: (context, constraints) {
         return FloatingButtons(
+          constraints: constraints,
           isOnLeft: widget.isOnLeft,
           expandedBackgroundColor: widget.expandedBackgroundColor,
           collapsedBackgroundColor: widget.collapsedBackgroundColor,
@@ -105,7 +106,6 @@ class _FloatingBarState extends State<FloatingBar> {
           expandedOpacity: widget.expandedOpacity,
           collapsedOpacity: widget.collapsedOpacity,
           expansionButtonColor: widget.expansionButtonColor,
-          constraints: constraints,
           expansionWidthPercentage: widget.expansionWidthPercentage,
           floatingBarSize: widget.floatingBarSize,
           initialYOffsetPercentage: widget.initialYOffsetPercentage,
@@ -270,9 +270,11 @@ class FloatingButtonsState extends State<FloatingButtons>
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
         color: color.withOpacity(widget.expandedOpacity),
-        border: Border.all(
-          color: widget.boarderColor ?? Colors.transparent,
-        ),
+        border: widget.boarderColor != null
+            ? Border.all(
+                color: widget.boarderColor!,
+              )
+            : null,
         borderRadius: BorderRadius.circular(_floatingBarSize * 0.2),
       ),
       child: Row(
@@ -363,9 +365,11 @@ class FloatingButtonsState extends State<FloatingButtons>
         decoration: BoxDecoration(
           shape: !_isPanUpdating ? BoxShape.rectangle : BoxShape.circle,
           color: color.withOpacity(widget.collapsedOpacity),
-          border: Border.all(
-            color: widget.boarderColor ?? Colors.transparent,
-          ),
+          border: widget.boarderColor != null
+              ? Border.all(
+                  color: widget.boarderColor!,
+                )
+              : null,
           borderRadius: !_isPanUpdating
               ? BorderRadius.circular(_floatingBarSize * 0.2)
               : null,

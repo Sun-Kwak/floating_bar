@@ -163,3 +163,11 @@ void main() async {
     await screenMatchesGolden(tester, 'floating_bar_expanded_UI_constraints');
   });
 }
+
+extension on WidgetTester {
+  Future<void> dragAndHold(Finder finder, Offset offset) async {
+    final gesture = await startGesture(getCenter(finder));
+    await gesture.moveBy(offset);
+    await pump();
+  }
+}
